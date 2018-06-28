@@ -18,6 +18,8 @@
  		margin: 0 auto;
  		width: 940px;
  	}
+
+
 	/*
 		formata a sacola no cabeçalho, estabelecendo a imagem, o posicionamento dos itens
 		tamanho do texto, e tamanho total
@@ -29,7 +31,7 @@
 
 			font-size: 14px;
 			padding-right: 35px;
-			/*padding-top: 8px;*/
+			padding-top: 8px; /*posiciona a sacola*/
 			text-align: right;
 			width: 140px;
 
@@ -50,6 +52,14 @@
 	.menu-opcoes a {
 	    color: #003366; /*coloca a cor no link*/
 	 }
+
+	.menu-opcoes a:hover {
+		color: #007DC6;
+	}
+
+	.menu-opcoes a:active {
+		color: #867DC6;
+	}
 
 	.menu-opcoes ul li { /*coloca o menu em linha e margens externas a esquerda*/
 	 	display: inline;
@@ -88,24 +98,15 @@
 	estabelece margens externas para os titulos h2 e a caixa de busca
 */
 	.busca h2,
-	.menu-departamentos h2 {
-	   padding: 0px 10px 0px 10px; /*top right bottom left*/
-	   margin: 0px 0px 0px 0px;
+	.menu-departamentos h2,
+	.busca form {
+	   margin: 10px;
 	 }
-
- 	.busca form {
- 		margin: 0px 10px 10px 10px;
- 	}
 /*
 	altera a cor do background dos itens do menu, visto que o anterior estabelecido era cinza, fica branco
 	adiciona margem acima de 1 px
 	e margem interna de 5px acima e 10px abaixo
 */
-	.menu-departamentos ul, nav {
-		padding-top: 0px;
-		margin-top: 0px;
-		padding-left: 0px;
-	 }
 
 	.menu-departamentos li {
 	 	margin-bottom: 1px;
@@ -121,12 +122,25 @@
 	   color: #333333;
 	   text-decoration: none;
 	 }
+
+	 .menu-departamentos li ul {
+	 	display: none;
+	 }
+
+	 .menu-departamentos li:hover ul {
+	 	display: block;
+	 }
+
+	 .menu-departamentos ul ul li {
+	 	background-color: #DCDCDC;
+	 }
 /*
 	formata a caixinha de busca
 */
 	.busca input[type=search] {
-    	 width: 170px;
-    	 border-radius: 10px;
+    	width: 170px;
+    	border-top-left-radius: 4px;
+ 		border-top-right-radius: 4px;
  	}
 
 	/*empurra as caixas para a esquerda*/
@@ -134,13 +148,18 @@
 	 .menu-departamentos {
 	     float: left;
 	 }
+
 	/*permite que uma caixa não sobreponha a outra, empurrando para a direita, mas ficam as duas alinhadas a esquerda*/
 	 .menu-departamentos {
 	     clear: left;
 	     margin-top: 10px;
 	 }
 
-
+	 /*personaliza o menu interno*/
+	 .menu-departamentos li li a:before {
+	 	content: '\2730';
+	 	padding-right: 3px;
+	 }
 	/*fim menu departamentos*/
 
 	/*classe para os dois paineis, com largura, bordas e margens*/
@@ -148,24 +167,36 @@
 		margin: 10px 0;
 		padding: 10px;
 		width: 445px;
+		border-radius: 4px;
+		box-shadow: 1px 1px 4px #999;
+		box-shadow: inset 1px 1px 4px #999;
 	}
 
+	.painel li:hover {
+		background-color: rgba(255, 255, 255, 0.8);
+		box-shadow: 0 0 5px #333;
+		transition: 0.7s ease-in;
+
+		transform: scale(1.2) rotate(-5deg); /*transforma em algum parametro, no caso escala*/
+	'	
+	}
+
+	.painel li:nth-child(2n):hover {
+		transform: scale(1.2) rotate(5deg); 
+	}
 	/*faz a caixa flutuar a esquerda*/
 	.novidades {
 		float: left;
 		background-color: #F5DCDC;
+		background: linear-gradient(#F5DCDC, #BEBEF4);
 	}
 
 	/*faz a caixa flutuar a direita*/
 	.mais-vendidos {
 		float: right;
 		background-color: #DCDCF5;
-	}
+		background: linear-gradient(#DCDCF5, #F4BEBE);
 
-	/*o ol e o nav vem com valores de padding e margin padrao, alterando as distancias finais, apenas zerei*/
-	.painel ol, nav {
-		padding: 0px;
-		margin: 0px;
 	}
 
 	/*alinha a lista ordenada de itens, acima, usando o modo de visualização em linha e em blocos de acordo com o espaço e estabelece o padding e as margens*/
@@ -176,13 +207,8 @@
 
 		margin: 2px;
 		padding-bottom: 10px;
-	}
+		transition: 0.7s ease-out;
 
-	/*tambem vem com um  valor padrão e foi zerada*/
-	.paineis figure {
-		text-align: center;
-		padding: 0px;
-		margin: 0px;
 	}
 
 	/*formata os titulos h2 com tamanho 24, peso e maiusculas. */
@@ -192,6 +218,15 @@
 		text-transform: uppercase;
 
 		margin: 0px 0px;
+
+		text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.8);
+	}
+
+	/*personaliza os titulos dos quadros novidades e */
+	.painel h2:before {
+		content: '\2756';
+		padding-right: 5px;
+		opacity: 0.4;
 	}
 
 	/*organiza os links de painel com uma cor mais agradavel aos olhos, alimnhamento, tamanho e decoração*/
@@ -208,7 +243,8 @@
 	footer {
 		background-image: url(img/fundo-rodape.png);
 		clear: both;
-		padding: 20px 0;
+		padding: 20px 0;	
+
 	}
 
 	/*posiciona o container*/
