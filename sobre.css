@@ -1,0 +1,151 @@
+/*
+	formata cor e fonte de todo o corpo da página
+*/
+body {
+   color: #333333;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	/* centraliza o body*/
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+ }
+
+ /* aqui inicia o header*/
+/* coloca o header com uma posição relativa*/
+
+ 	header {
+ 		position: relative;
+ 	}
+
+/*
+	estabelece o posicionamento e largura de todos os itens que tiverem a classe
+*/
+ 	.container {
+ 		margin: 0 auto;
+ 		width: 940px;
+ 	}
+	/*
+		formata a sacola no cabeçalho, estabelecendo a imagem, o posicionamento dos itens
+		tamanho do texto, e tamanho total
+	*/
+	.sacola {
+		background-image: url(img/sacola.png);
+		background-repeat: no-repeat;
+		background-position: top right;
+
+			font-size: 14px;
+			padding-right: 35px;
+			/*padding-top: 8px;*/
+			text-align: right;
+			width: 140px;
+
+		/*posiciona a sacola no header, acima e a direita*/
+				position: absolute;
+				top: 0;
+				right: 0;
+	}
+
+	/*
+		aqui as opções do menu
+	*/
+
+	.menu-opcoes ul {
+	   font-size: 15px; /*tamanho da fonte dentro do ul*/
+	 }
+
+	.menu-opcoes a {
+	    color: #003366; /*coloca a cor no link*/
+	 }
+
+	.menu-opcoes ul li { /*coloca o menu em linha e margens externas a esquerda*/
+	 	display: inline;
+	 	margin-left: 20px;
+	 }
+
+	 /*dá ao menu uma posição absoluta dentro do header, acima e a direita, depois da sacola, porque esta vem primeiro*/
+	.menu-opcoes {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+ /*aqui acaba o header*/
+/*
+	coloca um background nos titulos h1 da página e formata com padding, pondo "bordas internas" a caixa
+*/
+ h1#mirror {
+     background-image: url(img/sobre-background.jpg);
+     padding: 10px;
+ }
+/*
+	põe uma borda abaixo dos titulos h2, solida e de cor #333333 e uma margem externa superior
+*/
+ h2 {
+     border-bottom: 2px solid #333333;
+     margin-top: 30px;
+ }
+/*
+	adiciona identação e uma margem interna inferior
+*/
+ p {
+ 	padding: 0 45px;
+ 	text-indent: 15px;
+ }
+/*
+	coloca um background de cor cinza nas imagens internas a tag,
+	uma borda cinza também, porém escura,
+	alinha o texto ao centro da caixa formada,
+	colocar uma margem interna em todos os lados de 15 pixels e uma externa de 30 pixels.
+*/
+ figure {
+   background-color: #F2EDED;
+   border: 1px solid #ccc;
+   text-align: center;
+
+   padding: 15px;
+   margin: 30px;
+ }
+
+/*
+	personaliza a fonte para itálico e adiciona uma margem externa superior de 10 pixels
+*/
+ figcaption {
+   font-style: italic;
+   margin-top: 10px;
+ }
+
+/* 
+	delimita a caixa cinza da tag figure com o id centro-distribuicao
+*/
+
+ #centro-distribuicao {
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	width: 550px;
+ }
+
+/*
+	formata a cor dos textos na div rodape, estabelece as margens internas e externas superiores
+*/
+
+ #rodape {
+     color: #777;
+     margin: 30px 0;
+     padding: 30px 0;
+ }
+/*
+	
+*/
+ #rodape img {
+     margin-right: 30px;
+     vertical-align: middle;
+     width: 94px;
+ }
+
+ /*
+	estabelece as margens, e faz a imagem "flutuar" para a direita
+ */
+#familia-pelho {
+	float: right;
+	margin: 0 0 10px 10px;
+}
