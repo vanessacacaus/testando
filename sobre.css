@@ -56,6 +56,7 @@ body {
 
 	.menu-opcoes a {
 	    color: #003366; /*coloca a cor no link*/
+	    text-decoration: none;
 	 }
 
 	.menu-opcoes ul li { /*coloca o menu em linha e margens externas a esquerda*/
@@ -160,4 +161,8 @@ h1 + p {
 
 :not(p) + p::first-line {
 	font-variant: small-caps;
+}
+
+iframe {
+	text-align: center;
 }

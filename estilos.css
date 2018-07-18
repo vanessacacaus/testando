@@ -1,6 +1,9 @@
 /*
 	formata a cor dos textos na div rodape, estabelece as margens internas e externas superiores
 */
+
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
+
 @media (max-width: 940px) {
 /*estilos para mobile*/
 	.container {
@@ -39,6 +42,7 @@
 
 	 .painel {
 	 	width: auto;
+	 	font-family: 'Gaegu', cursive;
 	}
 
 	 .painel li {
@@ -47,7 +51,13 @@
 
 	 .painel img {
 	 	width: 100%;
+
 	}
+
+	.btn-painel {
+		display: none;
+	}
+
 } /*encerra o device*/
 
 	body {
@@ -82,6 +92,7 @@
 
  	.painel {
  		width: 47%;
+ 		font-family: 'Gaegu', cursive;
  	}
 
  	.painel li {
@@ -96,9 +107,8 @@
 		width: 78%;
 	}
 
-	}
 
-		.sacola {
+	.sacola {
 		background-image: url(img/sacola.png);
 		background-repeat: no-repeat;
 		background-position: top right;
@@ -114,7 +124,63 @@
 				top: 0;
 				right: 0;
 	}
+	.painel li:nth-child(n+4) { /*mostra apenas 6 itens (acho q de um vetor, a partir de 0*/
+	 	display: none;
+	 }
+
+	.painel-aberto li:nth-child(n+4) {
+		display: inline-block;
+}
+ .painel button {
+     /* posicionamento */
+     float: right;
+     margin-right: 10px;
+     padding: 10px;
+
+     /* estilo */
+     background-color: #333;
+     border: 0;
+     border-radius: 4px;
+     box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
+     color: white;
+     font-size: 1em;
+     text-decoration: none;
+     text-shadow: 1px 0 1px black;
+
+     /* animação */
+     transition: 0.3s;
  }
+
+ .painel button:hover {
+     background-color: #393939;
+     box-shadow: 1px 0 20px rgba(200, 200, 120, 0.9);
+ }
+ /*
+		aqui as opções do menu
+	*/
+
+	.menu-opcoes ul {
+	   font-size: 1em; /*tamanho da fonte dentro do ul*/
+	 }
+
+	.menu-opcoes a {
+	    color: #003366; /*coloca a cor no link*/
+	    text-decoration: none;
+	 }
+
+	.menu-opcoes a:hover {
+		color: #007DC6;
+	}
+
+	.menu-opcoes a:active {
+		color: #867DC6;
+	}
+
+	.menu-opcoes ul li { /*coloca o menu em linha e margens externas a esquerda*/
+	 	display: inline;
+	 	margin-left: 1.25em;
+	 }
+ } /*fim do media maior q 900*/
 
 
 	/*
@@ -378,6 +444,10 @@
 
 	 .social a[href*="plus.google.com"] {
 	   background-image: url(img/googleplus.png);
+	 }
+
+	 .painel li:nth=child(n+3){
+	 	display: none;
 	 }
 
 }
